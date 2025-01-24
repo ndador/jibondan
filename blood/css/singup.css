@@ -1,0 +1,94 @@
+body {
+	font-family: 'Arial', sans-serif;
+	background:#9ebcc8;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+  }
+
+  .form-container {
+
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	width: 550px;
+	max-width: 100%;
+	height: fit-content;
+  }
+
+  .form-container h2 {
+	text-align: center;
+	color: #333;
+  }
+
+  .form-group {
+	margin-bottom: 20px;
+  }
+
+  label {
+	display: block;
+	font-size: 14px;
+	color: #555;
+	margin-bottom: 8px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+	width: 100%;
+	padding: 10px;
+	font-size: 14px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	box-sizing: border-box;
+  }
+
+  input[type="submit"] {
+	background-color: #4caf50;
+	color: #fff;
+	padding: 12px 20px;
+	font-size: 16px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+  }
+
+  input[type="submit"]:hover {
+	background-color: #45a049;
+  }
+
+  .required-symbol {
+    color: red;
+    font-size: 14px;
+    margin-left: 5px;
+    visibility: visible; /* Default visibility */
+}
+.required-symbol.hidden {
+    visibility: hidden; /* Hide the symbol when input is filled */
+}
+
+
+
+
+.container {
+	width: 90%;
+	max-width: 600px;
+	background: white;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.form-step { display: none; }
+.form-step.active { display: block; }
+.form-group { margin-bottom: 15px; }
+.form-group label { font-weight: bold; }
+.form-group input, .form-group select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+button { width: 100%; padding: 10px; border: none; border-radius: 5px; cursor: pointer; }
+button:hover { opacity: 0.9; }
+.required-symbol { color: red; margin-left: 5px; visibility: visible; }
+.required-symbol.hidden { visibility: hidden; }
+.navigation-buttons { display: flex; justify-content: space-between; margin-top: 20px; }

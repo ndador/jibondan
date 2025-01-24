@@ -1,0 +1,49 @@
+let currentStep = 1, totalSteps = 3;
+
+function changeStep(step) {
+    if (!validateForm()) return;
+    document.getElementById(`step-${currentStep}`).classList.remove("active");
+    currentStep += step;
+    document.getElementById(`step-${currentStep}`).classList.add("active");
+    document.getElementById("prevBtn").style.display = currentStep > 1 ? "inline-block" : "none";
+    document.getElementById("nextBtn").style.display = currentStep < totalSteps ? "inline-block" : "none";
+    document.getElementById("submitBtn").style.display = currentStep === totalSteps ? "inline-block" : "none";
+}
+
+function validateForm() {
+    const currentFormStep = document.getElementById(`step-${currentStep}`);
+    const inputs = currentFormStep.querySelectorAll("input, select");
+    let isValid = true;
+    for (const input of inputs) {
+        const requiredSymbol = input.parentElement.querySelector(".required-symbol");
+        if (!input.value) {
+            input.focus();
+            if (requiredSymbol) requiredSymbol.classList.remove("hidden");
+            isValid = false;
+            break;
+        } else if (requiredSymbol) requiredSymbol.classList.add("hidden");
+    }
+    return isValid;
+}
+
+function toggleRequiredSymbol(input) {
+    const requiredSymbol = input.parentElement.querySelector(".required-symbol");
+    if (requiredSymbol) {
+        requiredSymbol.classList.toggle("hidden", !!input.value);
+    }
+}
+
+function showCategories() {
+    const district = document.getElementById("district").value;
+    const categorySelect = document.getElementById("category");
+    categorySelect.innerHTML = `<option value="">Select</option>`;
+    if (district === "CTG") {
+        categorySelect.innerHTML += `<option value="Kotwali">Kotwali</option><option value="Bandar">Bandar</option>`;
+    } else if (district === "DHAKA") {
+        categorySelect.innerHTML += `<option value="Tejgaon">Tejgaon</option><option value="Gulshan">Gulshan</option>`;
+    }
+}
+function toggleDisplay() {
+    const button = document.getElementById('multiStepForm');
+    button.style.display = button.style.display === 'none';
+}
